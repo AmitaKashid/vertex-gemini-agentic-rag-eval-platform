@@ -1,0 +1,11 @@
+services:
+  rag-eval-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DEFAULT_PROVIDER=mock
+      - EXPERIMENT_DIR=.runs
+      - TRACE_DIR=.runs/traces
+    volumes:
+      - ./.runs:/app/.runs
